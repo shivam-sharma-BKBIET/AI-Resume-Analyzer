@@ -1,6 +1,6 @@
 from fastapi import FastAPI, UploadFile, File
 from fastapi.middleware.cors import CORSMiddleware
-from google import genai
+import google.generativeai as genai
 from dotenv import load_dotenv
 import shutil
 import os
@@ -9,7 +9,7 @@ import pdfplumber
 
 load_dotenv()
 
-client = genai.Client(api_key=os.getenv("GOOGLE_API_KEY"))
+genai.configure(api_key=os.getenv("GOOGLE_API_KEY"))
 
 app = FastAPI()
 
