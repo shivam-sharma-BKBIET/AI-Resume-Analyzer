@@ -3,7 +3,7 @@ export const uploadResume = async (file: File) => {
   formData.append("file", file);
 
   try {
-    const response = await fetch("http://localhost:8000/analyze", {
+    const response = await fetch("https://ai-resume-analyzer-jx02.onrender.com/analyze", {
       method: "POST",
       body: formData,
     });
